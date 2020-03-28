@@ -17,13 +17,13 @@ namespace Singleton
 
     public class MySingleTon
     {
-        private static MySingleTon Instance = null;
+        private static readonly MySingleTon Instance = new MySingleTon();
         public static MySingleTon GetInstance
         {
             get
             {
-                if (Instance == null)
-                    Instance = new MySingleTon();
+                //if (Instance == null)
+                //    Instance = new MySingleTon();
                 return Instance;
             }
         }

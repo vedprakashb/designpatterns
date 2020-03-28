@@ -14,8 +14,8 @@ namespace Singleton
                 () => CallSingleton(),
                 () => CallSingleton1());
 
-          //  var x = MySingleTon.GetInstance;
-         //   x.PrintData("Hello");
+            //  var x = MySingleTon.GetInstance;
+            //   x.PrintData("Hello");
         }
         public static void CallSingleton()
         {
@@ -32,27 +32,31 @@ namespace Singleton
 
     public sealed class MySingleTon
     {
-        private static  MySingleTon Instance = null;
+        private static MySingleTon Instance = null;
         private static readonly object InstanceLock = new object();
         public static MySingleTon GetInstance
         {
             get
             {
-                lock (InstanceLock) { 
                 if (Instance == null)
-                    Instance = new MySingleTon();
+                {
+                    lock (InstanceLock)
+                    {
+                        if (Instance == null)
+                            Instance = new MySingleTon();
+                    }
                 }
                 return Instance;
             }
         }
         private MySingleTon()
         {
-            
+
         }
         public void PrintData(string str)
         {
             Console.WriteLine(str);
         }
     }
-   
+
 }

@@ -34,19 +34,20 @@ namespace Singleton
     {
         private static MySingleTon Instance = null;
         private static readonly object InstanceLock = new object();
+        private static Lazy<MySingleTon> lazySingleton = new Lazy<MySingleTon>(() => new MySingleTon());
         public static MySingleTon GetInstance
         {
             get
             {
-                if (Instance == null)
-                {
-                    lock (InstanceLock)
-                    {
-                        if (Instance == null)
-                            Instance = new MySingleTon();
-                    }
-                }
-                return Instance;
+                //if (Instance == null)
+                //{
+                //    lock (InstanceLock)
+                //    {
+                //        if (Instance == null)
+                //            Instance = new MySingleTon();
+                //    }
+                //}
+                return lazySingleton.Value;
             }
         }
         private MySingleTon()

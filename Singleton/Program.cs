@@ -10,20 +10,38 @@ namespace Singleton
     {
         static void Main(string[] args)
         {
+            Parallel.Invoke(
+                () => CallSingleton(),
+                () => CallSingleton1());
+
+          //  var x = MySingleTon.GetInstance;
+         //   x.PrintData("Hello");
+        }
+        public static void CallSingleton()
+        {
             var x = MySingleTon.GetInstance;
-            x.PrintData("Hello");
+            x.PrintData("CallSingleton");
+        }
+        public static void CallSingleton1()
+        {
+            var x = MySingleTon.GetInstance;
+            x.PrintData("CallSingleton1");
+
         }
     }
 
-    public class MySingleTon
+    public sealed class MySingleTon
     {
-        private static readonly MySingleTon Instance = new MySingleTon();
+        private static  MySingleTon Instance = null;
+        private static readonly object InstanceLock = new object();
         public static MySingleTon GetInstance
         {
             get
             {
-                //if (Instance == null)
-                //    Instance = new MySingleTon();
+                lock (InstanceLock) { 
+                if (Instance == null)
+                    Instance = new MySingleTon();
+                }
                 return Instance;
             }
         }
@@ -36,4 +54,5 @@ namespace Singleton
             Console.WriteLine(str);
         }
     }
+   
 }

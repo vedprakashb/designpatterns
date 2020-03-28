@@ -1,0 +1,6 @@
+D:\DesignPatterns\Singleton\bin\Debug\Singleton.exe.config
+D:\DesignPatterns\Singleton\bin\Debug\Singleton.exe
+D:\DesignPatterns\Singleton\bin\Debug\Singleton.pdb
+D:\DesignPatterns\Singleton\obj\Debug\Singleton.csprojAssemblyReference.cache
+D:\DesignPatterns\Singleton\obj\Debug\Singleton.exe
+D:\DesignPatterns\Singleton\obj\Debug\Singleton.pdb

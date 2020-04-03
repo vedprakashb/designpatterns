@@ -6,3 +6,5 @@
 /Factory/obj/Debug/netcoreapp3.1
 /Factory/.vs/Factory/v16
 /Factory/bin/Debug/netcoreapp3.1
+/AbstractFactory/obj
+/Factory/.vs/DesignPatterns/v16

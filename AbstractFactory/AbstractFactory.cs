@@ -11,13 +11,24 @@ namespace AbstractFactory
 {
     public class DataBaseHelper
     {
+        IDataBaseFactory factory;
+        public DataBaseHelper(IDataBaseFactory dbFactory)
+        {
+            factory = dbFactory;
+        }
+
+        public void Execute(DbCommand cmd)
+        {
+            Console.WriteLine($"Commandtext :-- {cmd.CommandText}");
+            Console.WriteLine($"Connection string  :-- {cmd.Connection.ConnectionString}");
+        }
 
     }
     public interface IDataBaseFactory
     {
         DbConnection GetConnection();
         DbCommand GetCommand();
-        
+
 
     }
     public class SQLFacotry : IDataBaseFactory

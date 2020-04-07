@@ -8,3 +8,6 @@
 /Factory/bin/Debug/netcoreapp3.1
 /AbstractFactory/obj
 /Factory/.vs/DesignPatterns/v16
+/AbstractFactoryCore/obj
+/Builder/obj
+/Facade/obj

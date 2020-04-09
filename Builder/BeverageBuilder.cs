@@ -4,12 +4,8 @@ using System.Text;
 
 namespace Builder
 {
-    public interface IComputerBuilder
+    class BeverageBuilder
     {
-
-    }
-    public class ComputerAssembler
-    {
-
+        // TODO :
     }
 }
